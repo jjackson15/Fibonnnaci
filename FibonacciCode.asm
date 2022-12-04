@@ -1,7 +1,8 @@
 .data
 integer: .asciiz "Enter a number greater than 25\n"
 prompt1: .asciiz "The Fibonnaci sequence is:\n"
-error: .aciiz "Illegal number!"
+error: .asciiz "Illegal number!"
+comma: .asciiz ", "
 
 .text 
 main:
@@ -22,6 +23,14 @@ syscall
 
 li $v0, 1 #prints result
 move $t0, $t1
-
-li $I v0, 10 #exits
 syscall
+
+li $v0, 4
+la $a0, comma
+syscall
+
+
+li $v0, 10 #exits
+syscall
+
+
