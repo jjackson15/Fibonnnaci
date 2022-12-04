@@ -23,7 +23,7 @@ la $a0, prompt1
 syscall
 
 li $v0, 1 #prints result
-move $a0, $a               1
+move $a0, $a1              1
 syscall
 
 li $v0, 4
@@ -40,6 +40,12 @@ sw $ra, 8($sp)
 sw $s0, 4($sp)
 sw $s1, 0($sp)
 move $s0, $a0
+
+li $v0, 1 # return value 
+ble $s0, 0x2, fibonacciExit 
+addi $a0, $s0, -1 
+jal fibonacci
+move $s1, $v0 # store result of f(n-1) to s1
 
 
 
