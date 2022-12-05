@@ -5,6 +5,7 @@ error: .asciiz "Illegal number!"
 comma: .asciiz ", "
 .globl main
 .text 
+
 main:
 li $v0, 4 #prints message 
 la $a0, command 
@@ -12,7 +13,10 @@ syscall
 
 li $v0, 5 #reads string
 syscall
-#beq $v0, 0, iszero
+move $t1, $v0
+slti $t1, $v0, 25
+bne $t1, $zero, fibonacci
+beq $t1, $zero, error
 
 move $a0, $v0 #saves input to register
 jal fibonacci #calls function
@@ -38,9 +42,7 @@ syscall
   #li $v0, 4
  # la $a0, command
   
- #islessthan:
-  #li $v0, 4
-  #la $a0, command
+
 
 fibonacci:
   addi $sp, $sp, -12
