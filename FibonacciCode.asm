@@ -18,6 +18,8 @@ slti $t1, $v0, 25
 bne $t1, $zero, fibonacci
 beq $t1, $zero, error
 
+move $v0, $t1
+
 move $a0, $v0 #saves input to register
 jal fibonacci #calls function
 move $a1, $v0
@@ -37,13 +39,7 @@ syscall
 
 li $v0, 10 #exits
 syscall
-
-#iszero:
-  #li $v0, 4
- # la $a0, command
   
-
-
 fibonacci:
   addi $sp, $sp, -12
   sw $ra, 8($sp)
