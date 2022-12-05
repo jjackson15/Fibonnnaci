@@ -12,7 +12,7 @@ syscall
 
 li $v0, 5 #reads string
 syscall
-beq $v0, 0, iszero
+#beq $v0, 0, iszero
 
 move $a0, $v0 #saves input to register
 jal fibonacci #calls function
@@ -34,13 +34,13 @@ syscall
 li $v0, 10 #exits
 syscall
 
-iszero:
-  li $v0, 4
-  la $a0, comman
+#iszero:
+  #li $v0, 4
+ # la $a0, command
   
- islessthan:
-  li $v0, 4
-  la $a0, command
+ #islessthan:
+  #li $v0, 4
+  #la $a0, command
 
 fibonacci:
   addi $sp, $sp, -12
