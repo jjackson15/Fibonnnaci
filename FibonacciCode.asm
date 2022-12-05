@@ -46,6 +46,12 @@ ble $s0, 0x2, fibonacciExit
 addi $a0, $s0, -1 
 jal fibonacci
 move $s1, $v0 # store result of f(n-1) to s1
+addi $a0, $s0, -2 
+jal fibonacci
+add $v0, $s1, $v0 # add f(n-1)
+
+fibonacciExit:
+lw $ra, 8($sp)
 
 
 
