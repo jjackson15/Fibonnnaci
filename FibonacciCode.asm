@@ -36,7 +36,7 @@ syscall
 
 iszero:
   li $v0, 4
-  la $a0, command
+  la $a0, comman
   
  islessthan:
   li $v0, 4
