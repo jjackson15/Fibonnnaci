@@ -44,7 +44,11 @@ syscall
 add $a0, $t1, $zero
 li $v0, 1
 syscall
+la $a0, comma
+li $v0, 4
+syscall
 
+move $s0, $ra
 li $v0, 10 #exits
 syscall
   
