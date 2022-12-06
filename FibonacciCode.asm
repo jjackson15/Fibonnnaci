@@ -15,8 +15,8 @@ li $v0, 5 #reads string
 syscall
 move $t1, $v0
 slti $t1, $v0, 25
-bne $t1, $zero, fibonacci
-beq $t1, $zero, error
+#bne $t1, $zero, fibonacci
+#beq $t1, $zero, error
 
 move $v0, $t1
 
