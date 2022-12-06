@@ -3,8 +3,9 @@ command: .asciiz "Enter a number greater than 25\n"
 prompt1: .asciiz "The Fibonnaci sequence is:\n"
 error: .asciiz "Illegal number!"
 comma: .asciiz ", "
+.text
 .globl main
-.text 
+
 
 main:
 li $v0, 4 #prints message 
