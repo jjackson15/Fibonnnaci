@@ -59,9 +59,17 @@ add $t2, $t0, $t1
 add $t0, $zero, $t2
 beq $s1, $s2, print
 addi $s2, $s2, 1
-
 add $t2, $t0, $t1
 add $t1, $zero, $t2
+
+print:
+add $a0, $t0, $zero
+li $v0, 1
+syscall
+la $a0, newl
+li $v0, 4
+syscall
+beq $s1, $s2, end
 
 fibonacciExit:
   lw $ra, 8($sp)
