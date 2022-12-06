@@ -18,7 +18,7 @@ move $t3, $v0
 add $s0, $ra, $zero
 add $t0, $zero, $zero
 addi $t1, $zero, 1
-addi $s1, $zero, $t3
+add $s1, $zero, $t3
 addi $s2, $zero, 2
 
 slti $t4, $v0, 25
