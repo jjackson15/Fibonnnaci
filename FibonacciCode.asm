@@ -71,12 +71,19 @@ li $v0, 4
 syscall
 beq $s1, $s2, end
 
-fibonacciExit:
-  lw $ra, 8($sp)
-  lw $s0, 4($sp)
-  lw $s1, 0($sp)
-  addi $sp, $sp, 12
-  jr $ra
+print2:
+add $a0, $t1, $zero
+li $v0, 1
+syscall
+la $a0, newl
+li $v0, 4
+syscall
+beq $s1, $s2, end
+j start
 
+fibonacciExit:
+move $s0, $ra
+li $v0, 10 #exits
+syscall
 
 
