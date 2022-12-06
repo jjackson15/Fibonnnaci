@@ -53,20 +53,15 @@ li $v0, 10 #exits
 syscall
   
 fibonacci:
-  addi $sp, $sp, -12
-  sw $ra, 8($sp)
-  sw $s0, 4($sp)
-  sw $s1, 0($sp)
-  move $s0, $a0
+beq $s1, $s2, print2
+addi $s2, $s2, 1
+add $t2, $t0, $t1
+add $t0, $zero, $t2
+beq $s1, $s2, print
+addi $s2, $s2, 1
 
-  li $v0, 1 # return value 
-  ble $s0, 0x2, fibonacciExit 
-  addi $a0, $s0, -1 
-  jal fibonacci
-  move $s1, $v0 # store result of f(n-1) to s1
-  addi $a0, $s0, -2 
-  jal fibonacci
-  add $v0, $s1, $v0 # add f(n-1)
+add $t2, $t0, $t1
+add $t1, $zero, $t2
 
 fibonacciExit:
   lw $ra, 8($sp)
