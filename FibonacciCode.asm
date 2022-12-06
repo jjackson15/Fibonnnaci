@@ -4,7 +4,7 @@ prompt1: .asciiz "The Fibonnaci sequence is:\n"
 error: .asciiz "Illegal number!"
 comma: .asciiz ", "
 .text
-.globl main
+
 
 
 main:
