@@ -35,14 +35,15 @@ li $v0, 4 #prints second message
 la $a0, prompt1
 syscall
 
+add $a0, $t0, $zero
 li $v0, 1 #prints result
-move $a0, $a1              1
 syscall
-
-li $v0, 4
 la $a0, comma
+li $v0, 4
 syscall
-
+add $a0, $t1, $zero
+li $v0, 1
+syscall
 
 li $v0, 10 #exits
 syscall
